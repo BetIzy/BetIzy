@@ -1,0 +1,19 @@
+bs_team:
+    resource: "@BSTeamBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bs_main:
+    resource: "@BSMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bs_bet:
+    resource: "@BSBetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bs_offer:
+    resource: "@BSOfferBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bs_result:
+    resource: "@BSResultBundle/Resources/config/routing.yml"
+    prefix:   /

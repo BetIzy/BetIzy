@@ -1,0 +1,35 @@
+bs_result_get:
+    path:    /Result/Get
+    defaults:
+        _controller:    BSResultBundle:Result:get
+
+bs_result_offer_to_result:
+    path:    /Offer/To/Result
+    defaults:
+        _controller:    BSResultBundle:Result:offerToResult
+
+bs_result_delete_duplicate_result:
+    path:    /Result/Delete/Duplicate
+    defaults:
+        _controller:    BSResultBundle:Result:deleteDuplicateEntry
+
+bs_market_result_update_result:
+    path:    /MarketResult/Update
+    defaults:
+        _controller:    BSResultBundle:Result:updateResult
+
+bs_result_add_team:
+    path:    /Result/Add/Team
+    defaults:
+        _controller:    BSResultBundle:Result:addTeam
+
+bs_result_strategy_home:
+    path:    /Result/Strategy/{strategyLabel}
+    defaults:
+        _controller:    BSResultBundle:Result:resultStrategy
+
+bs_result_create_strategy:
+    path:    /Strategy/Create/{strategyLabel}
+    defaults:
+        _controller:    BSResultBundle:Result:createStrategy
+

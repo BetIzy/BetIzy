@@ -1,0 +1,19 @@
+bs_bet_home:
+    path:    /Bet/Get/{labelStrategy}
+    defaults:
+        _controller:    BSBetBundle:Bet:get
+
+bs_bet_result_update:
+    path:    /Bet/Update
+    defaults:
+        _controller:    BSBetBundle:Bet:update
+
+bs_bet_get_to_play:
+    path:    /Bet/Get/ToPlay/Mail
+    defaults:
+        _controller:    BSBetBundle:Bet:getToPlay
+
+bs_bet_half:
+    path:    /Bet/Half
+    defaults:
+        _controller:    BSBetBundle:Bet:perCentVictory50For5
