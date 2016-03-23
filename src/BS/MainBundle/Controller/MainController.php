@@ -12,8 +12,8 @@ class MainController extends Controller
         ini_set('max_execution_time', 18000);
         ini_set('memory_limit', '-1');
 
-        $this->forward('BSOfferBundle:Offer:get');
-        //$this->forward('BSResultBundle:Result:get');
+        //$this->forward('BSOfferBundle:Offer:get');
+        $this->forward('BSResultBundle:Result:get');
 
         /*$this->forward('BSBetBundle:Bet:getBetweenPrice', array('labelStrategy' => 'HomeBetween110120', 'outcomeLowCote' => '1,10', 'outcomeUpCote' => '1,20'));
         $this->forward('BSBetBundle:Bet:getBetweenPrice', array('labelStrategy' => 'HomeBetween120130', 'outcomeLowCote' => '1,20', 'outcomeUpCote' => '1,30'));

@@ -61,8 +61,7 @@ class OfferController extends Controller
     }*/
 
     /*
-     * G�n�re les offres du jour
-     * Ne permet pas la pr�sence de doublon
+     * Récupère les offres du jour
      */
     public function getAction()
     {
@@ -98,7 +97,7 @@ class OfferController extends Controller
 
         foreach($offerInformationsArray as $offerInformations)
         {
-            if($offerInformations != null)
+            if($offerInformations != null) // Vérification qu'il y a bien des offres sur le sport que l'on va traiter
             {
                 foreach ($offerInformations as $offer)
                 {

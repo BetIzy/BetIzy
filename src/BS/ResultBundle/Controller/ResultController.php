@@ -189,9 +189,9 @@ class ResultController extends Controller
     public function getAction()
     {
         ini_set('max_execution_time', 18000);
-        for($i=24; $i<30; $i++) {
+        for($i=10; $i<23; $i++) {
             //$apiContent = file_get_contents("https://www.parionssport.fr/api/1n2/resultats?date=".strftime("%Y%m%d", mktime(0, 0, 0, date('m'), date('d')-1, date('y'))));
-            $apiContent = file_get_contents("https://www.parionssport.fr/api/1n2/resultats?date=201602".$i);
+            $apiContent = file_get_contents("https://www.parionssport.fr/api/1n2/resultats?date=201603".$i);
             $resultInformations = json_decode($apiContent);
             $repositoryResult = $this->getDoctrine()->getManager()->getRepository('BSResultBundle:Result');
             $repositoryMarketResult = $this->getDoctrine()->getManager()->getRepository('BSResultBundle:MarketResult');
