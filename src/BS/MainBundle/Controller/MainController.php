@@ -13,7 +13,7 @@ class MainController extends Controller
         ini_set('memory_limit', '-1');
 
         //$this->forward('BSOfferBundle:Offer:get');
-        $this->forward('BSResultBundle:Result:get');
+        //$this->forward('BSResultBundle:Result:get');
 
         /*$this->forward('BSBetBundle:Bet:getBetweenPrice', array('labelStrategy' => 'HomeBetween110120', 'outcomeLowCote' => '1,10', 'outcomeUpCote' => '1,20'));
         $this->forward('BSBetBundle:Bet:getBetweenPrice', array('labelStrategy' => 'HomeBetween120130', 'outcomeLowCote' => '1,20', 'outcomeUpCote' => '1,30'));
@@ -106,7 +106,7 @@ class MainController extends Controller
 
 
 
-        /*$this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'HomeBetween110120'));
+        $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'HomeBetween110120'));
         $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'HomeBetween120130'));
         $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'HomeBetween130140'));
         $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'HomeBetween140150'));
@@ -146,7 +146,7 @@ class MainController extends Controller
         $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'OutsideBetween300350'));
         $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'OutsideBetween350400'));
 
-        $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'OutsideUpper400'));*/
+        $this->forward('BSResultBundle:Result:resultSport', array('strategyLabel' => 'OutsideUpper400'));
 
 
 
