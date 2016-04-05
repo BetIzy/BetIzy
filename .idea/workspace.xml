@@ -35,7 +35,7 @@
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BS/MainBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7012263">
+            <state vertical-scroll-proportion="0.67781496">
               <caret line="148" column="105" selection-start-line="148" selection-start-column="105" selection-end-line="148" selection-end-column="105" />
               <folding />
             </state>
@@ -70,8 +70,8 @@
         <option value="$PROJECT_DIR$/src/BS/BetBundle/Controller/BetController.php" />
         <option value="$PROJECT_DIR$/src/BS/OfferBundle/Controller/OfferController.php" />
         <option value="$PROJECT_DIR$/src/BS/ResultBundle/Controller/ResultController.php" />
-        <option value="$PROJECT_DIR$/src/BS/MainBundle/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/BS/MainBundle/Controller/MainController.php" />
       </list>
     </option>
   </component>
@@ -803,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BS/MainBundle/Controller/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7012263">
+        <state vertical-scroll-proportion="0.67781496">
           <caret line="148" column="105" selection-start-line="148" selection-start-column="105" selection-end-line="148" selection-end-column="105" />
           <folding />
         </state>
