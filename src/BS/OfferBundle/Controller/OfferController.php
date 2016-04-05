@@ -17,7 +17,6 @@ class OfferController extends Controller
         $repositoryTeam = $this->getDoctrine()->getManager()->getRepository('BSTeamBundle:Team');
         $offerList = $repositoryOffer->findAll();
         foreach($offerList as $offer){
-            if($offer->getEnd() > '2016-02-26') {
                 List($dom, $ext) = explode("-", $offer->getLabelOffer());
                 $teamDomId = $repositoryTeam->getIdByName($dom);
                 $teamExtId = $repositoryTeam->getIdByName($ext);
@@ -28,9 +27,7 @@ class OfferController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($offer);
                     $em->flush();
-
                 }
-            }
         }
         return new Response("Hello world");
     }
