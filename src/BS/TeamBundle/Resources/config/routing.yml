@@ -27,3 +27,8 @@ bs_team_update_outside_rank:
     path:    /Team/Update/Outside/Rank
     defaults:
         _controller:    BSTeamBundle:Team:updateOutsideRank
+
+bs_team_fusion:
+    path:    /Team/Fusion
+    defaults:
+        _controller:    BSTeamBundle:Team:fusionTeam

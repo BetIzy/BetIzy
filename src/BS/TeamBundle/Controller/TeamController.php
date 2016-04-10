@@ -217,5 +217,82 @@ class TeamController extends Controller
         }
         return new Response('');
     }
+
+    public function fusionTeamAction(){
+        ini_set('max_execution_time', 18000);
+        ini_set('memory_limit', '-1');
+        $base1Rep = $this->getDoctrine()->getManager('base1')->getRepository("BSTeamBundle:Team");
+        $teamListB1 = $base1Rep->findAll();
+        $base2Rep = $this->getDoctrine()->getManager('base2')->getRepository("BSTeamBundle:Team");
+        $teamListB2 = $base2Rep->findAll();
+
+        foreach($teamListB1 as $team1){
+            $team2 = $base2Rep->verifyDuplicate($team1->getName(),$team1->getCompetitionId());
+            if(!empty($team2)){
+                //base3 = base1 + base2
+                $team = new Team();
+                $team->setName($team1->getName());
+                $team->setCompetitionId($team1->getCompetitionId());
+                $hv = (int)($team1->getHomeVictory()) + (int)($team2[0]->getHomeVictory());
+                $team->setHomeVictory((string)$hv);
+                $team->setHomeDefeat($team1->getHomeDefeat() + $team2[0]->getHomeDefeat());
+                $team->setHomeNull($team1->getHomeNull() + $team2[0]->getHomeNull());
+                $team->setOutsideVictory($team1->getOutsideVictory() + $team2[0]->getOutsideVictory());
+                $team->setOutsideNull($team1->getOutsideNull() + $team2[0]->getOutsideNull());
+                $team->setOutsideDefeat($team1->getOutsideDefeat() + $team2[0]->getOutsideDefeat());
+                $team->setHomePoints($team1->getHomePoints() + $team2[0]->getHomePoints());
+                $team->setOutsidePoints($team1->getOutsidePoints() + $team2[0]->getOutsidePoints());
+                $team->setPoints($team1->getPoints() + $team2[0]->getPoints());
+                $team->setSeries($team2[0]->getSeries().$team1->getSeries());
+                $em = $this->getDoctrine()->getManager('base3');
+                $em->persist($team);
+                $em->flush();
+            }
+            else{
+                //base3 = base1
+                $team = new Team();
+                $team->setName($team1->getName());
+                $team->setCompetitionId($team1->getCompetitionId());
+                $team->setHomeVictory($team1->getHomeVictory());
+                $team->setHomeDefeat($team1->getHomeDefeat());
+                $team->setHomeNull($team1->getHomeNull());
+                $team->setOutsideVictory($team1->getOutsideVictory());
+                $team->setOutsideNull($team1->getOutsideNull());
+                $team->setOutsideDefeat($team1->getOutsideDefeat());
+                $team->setHomePoints($team1->getHomePoints());
+                $team->setOutsidePoints($team1->getOutsidePoints());
+                $team->setPoints($team1->getPoints());
+                $team->setSeries($team1->getSeries());
+                $em = $this->getDoctrine()->getManager('base3');
+                $em->persist($team);
+                $em->flush();
+            }
+        }
+
+        foreach($teamListB2 as $team2){
+
+            if(empty($team1 = $base1Rep->verifyDuplicate($team2->getName(),$team2->getCompetitionId()))){
+                //base3 = base1 + base2
+                $team = new Team();
+                $team->setName($team2->getName());
+                $team->setCompetitionId($team2->getCompetitionId());
+                $team->setHomeVictory($team2->getHomeVictory());
+                $team->setHomeDefeat($team2->getHomeDefeat());
+                $team->setHomeNull($team2->getHomeNull());
+                $team->setOutsideVictory($team2->getOutsideVictory());
+                $team->setOutsideNull($team2->getOutsideNull());
+                $team->setOutsideDefeat($team2->getOutsideDefeat());
+                $team->setHomePoints($team2->getHomePoints());
+                $team->setOutsidePoints($team2->getOutsidePoints());
+                $team->setPoints($team2->getPoints());
+                $team->setSeries($team2->getSeries());
+                $em = $this->getDoctrine()->getManager('base3');
+                $em->persist($team);
+                $em->flush();
+            }
+        }
+
+        return new Response('');
+    }
 }
 ?>
