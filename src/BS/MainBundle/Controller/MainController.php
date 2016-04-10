@@ -61,8 +61,8 @@ class MainController extends Controller
         //$this->forward('BSResultBundle:Result:offerToResult');
         //$this->forward('BSBetBundle:Bet:update');
 
-/*
-        $this->forward('BSResultBundle:Result:resultStrategy', array('strategyLabel' => 'HomeBetween110120'));
+
+     /*   $this->forward('BSResultBundle:Result:resultStrategy', array('strategyLabel' => 'HomeBetween110120'));
         $this->forward('BSResultBundle:Result:resultStrategy', array('strategyLabel' => 'HomeBetween120130'));
         $this->forward('BSResultBundle:Result:resultStrategy', array('strategyLabel' => 'HomeBetween130140'));
         $this->forward('BSResultBundle:Result:resultStrategy', array('strategyLabel' => 'HomeBetween140150'));
